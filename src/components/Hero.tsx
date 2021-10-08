@@ -1,134 +1,153 @@
-import { BoxProps, VStack } from "@chakra-ui/layout";
-import { Box, Button, Flex, HStack, Icon, Text } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import React from "react";
+import { HamburgerIcon } from "@chakra-ui/icons";
+import { BoxProps } from "@chakra-ui/layout";
 import {
-  AiOutlineGithub,
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
-} from "react-icons/ai";
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import { motion } from "framer-motion";
+import React from "react";
+import Typewriter from "typewriter-effect";
+import { Container } from "./Container";
+import { DarkModeSwitch } from "./DarkModeSwitch";
+import Nav from "./Nav";
 export const MotionBox = motion<BoxProps>(Box);
-export const Hero = ({ title }: { title: string }) => (
-  <Flex justifyContent="center" alignItems="center" height="100vh">
-    <Flex
-      flexDir="column"
-      role="group"
-      p={4}
-      w={["100vw", "70vw"]}
-      justify="center"
-    >
-      <Text
-        fontSize={["4vw", "1.5rem"]}
-        fontWeight="400"
-        textTransform="uppercase"
-        letterSpacing="4px"
-        my={1}
+export const Hero = ({ title }: { title: string }) => {
+  const bg = useColorModeValue("red.500", "red.200");
+  const color = useColorModeValue("white", "gray.800");
+  const buttonBgColor = useColorModeValue("white", "transparent");
+  const buttonColor = useColorModeValue("black", "white");
+  const titleColor = useColorModeValue("blue.600", "white");
+  return (
+    <Container h="100%" w="100vw">
+      <Nav>
+        <DarkModeSwitch />
+        <HamburgerIcon h={8} w={8} />
+      </Nav>
+      <Flex
+        h="100%"
+        flexDir="column"
+        role="group"
+        p={4}
+        w={["100vw", "70vw"]}
+        justify="center"
       >
-        I am Adam Rajchwald
-      </Text>
-      <HStack
-        my={1}
-        alignItems="center"
-        spacing={[4, 8]}
-        mb="40px"
-        w="100%"
-        fontSize={["9.2vw", "5vw"]}
-        bgGradient="linear(to-l, #7928CA, #FF0080)"
-        bgClip="text"
-      >
-        <Box
-          _groupHover={{
-            transform: "translateX(-0.3em)",
-            transition: "0.2s linear",
-            color: "gold",
+        <Text
+          fontSize={["1.3rem", "1.1rem"]}
+          fontWeight="300"
+          textTransform="uppercase"
+          letterSpacing="4px"
+        >
+          My name is
+        </Text>
+        <Text
+          fontSize={["6vw", "3rem"]}
+          fontWeight="600"
+          textTransform="uppercase"
+          letterSpacing="4px"
+        >
+          Adam Rajchwald
+        </Text>
+        <HStack
+          alignItems="center"
+          fontWeight="700"
+          spacing={[4, 6]}
+          mb="10px"
+          w="100%"
+          fontSize={["9.2vw", "6vw"]}
+          // bgGradient="linear(to-l, #7928CA, #FF0080)"
+          // bgClip="text"
+          color={titleColor}
+          fontStyle="italic"
+          sx={{
+            textShadow: "0 0 7px #3fc0fb",
           }}
-        >{`<`}</Box>
+        >
+          <Box>{`<`}</Box>
+
+          <Text
+            _groupHover={{
+              letterSpacing: "10px",
+              transition: "0.2s linear",
+            }}
+          >
+            <Typewriter
+              options={{
+                autoStart: true,
+                loop: true,
+                strings: [
+                  "WebDeveloper",
+                  "FullStackDev",
+                  "FrontEnd",
+                  "BackEnd",
+                  "ReactJS",
+                ],
+                delay: 90,
+                deleteSpeed: 100,
+              }}
+            />
+          </Text>
+          <Box>{`/ >`}</Box>
+        </HStack>
 
         <Text
-          _groupHover={{
-            letterSpacing: "6px",
-            transition: "0.2s linear",
-          }}
+          maxW={["80%", "45%"]}
+          mb="30px"
+          fontSize="1.1rem"
+          fontWeight="500"
         >
-          {title}
+          I'm a fullstack web developer based in Chicago, Illinois specializing
+          in building responsive and performative websites.
         </Text>
-        <Box
-          _groupHover={{
-            color: "gold",
-            transform: "translateX(0.3em)",
-            transition: "0.2s linear",
-          }}
-        >{`/ >`}</Box>
-      </HStack>
-      <Box>
-        <Button
-          borderRadius="none"
-          size="md"
-          border="1px solid white"
-          display={["block", "none"]}
-        >
-          Contact Me
-        </Button>
-        <Button
-          borderRadius="none"
-          size="lg"
-          border="1px solid white"
-          display={["none", "block"]}
-        >
-          Contact Me
-        </Button>
-      </Box>
-      <Box></Box>
-      {/* <ChevronDownIcon color="white" w={7} h={7} /> */}
-    </Flex>
 
-    <VStack
-      spacing={4}
-      position="fixed"
-      bottom="2rem"
-      left="2rem"
-      display={["none", "flex"]}
-    >
-      <Text
-        transform="rotate(-90deg)"
-        fontSize="1.5rem"
-        letterSpacing="4px"
-        my={4}
-      >
-        Links
-      </Text>
-      <Box h={12} borderRight="1px solid white" />
-      <Link href="gooogle.com">
-        <Icon
-          as={AiOutlineGithub}
-          cursor="pointer"
-          w={7}
-          h={7}
-          _hover={{ transform: "translateX(0.6em)" }}
-        />
-      </Link>
-      <Link href="gooogle.com">
-        <Icon
-          as={AiOutlineLinkedin}
-          cursor="pointer"
-          w={7}
-          h={7}
-          _hover={{ transform: "translateX(0.6em)" }}
-        />
-      </Link>
-      <Link href="gooogle.com">
-        <Icon
-          as={AiOutlineInstagram}
-          cursor="pointer"
-          w={7}
-          h={7}
-          _hover={{ transform: "translateX(0.6em)" }}
-        />
-      </Link>
-    </VStack>
-  </Flex>
-);
+        <Text
+          maxW={["80%", "45%"]}
+          mb="30px"
+          fontSize="1.1rem"
+          fontWeight="500"
+        >
+          I ❤️{" "}
+          <Text as="span" fontSize="1.2rem" color="blue.300">
+            React
+          </Text>{" "}
+          &{" "}
+          <Text as="span" fontSize="1.2rem" color="blue.300">
+            Typescript
+          </Text>{" "}
+        </Text>
+        <Box>
+          <Button
+            borderRadius="none"
+            size="md"
+            border="1px solid white"
+            display={["block", "none"]}
+            bgColor={buttonBgColor}
+            color={buttonColor}
+            borderColor={buttonColor}
+          >
+            Get in touch
+          </Button>
+          <Button
+            borderRadius="none"
+            size="lg"
+            border="1px solid white"
+            display={["none", "block"]}
+            bgColor={buttonBgColor}
+            color={buttonColor}
+            borderColor={buttonColor}
+          >
+            Get in touch
+          </Button>
+        </Box>
+        <Box></Box>
+        {/* <ChevronDownIcon color="white" w={7} h={7} /> */}
+      </Flex>
+    </Container>
+  );
+};
 
 Hero.defaultProps = {
   title: "WebDeveloper",

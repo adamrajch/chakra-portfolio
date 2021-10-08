@@ -1,28 +1,42 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
 import { Box } from "@chakra-ui/react";
+import React from "react";
 import About from "../components/About";
-import { Container } from "../components/Container";
-import { DarkModeSwitch } from "../components/DarkModeSwitch";
+import Contact from "../components/Contact";
 import { Hero } from "../components/Hero";
-import StickyNav from "../components/Nav";
-import SnapSection from "../components/snapSection";
+import LinkSection from "../components/LinkSection";
+import Projects from "../components/Projects";
+import Tech from "../components/Tech";
+import { Wrapper } from "../components/Wrapper";
 const Index = () => (
-  <Box h="100vh" overflowY="scroll" sx={{ scrollSnapType: "y mandatory" }}>
-    <StickyNav>
-      <DarkModeSwitch />
-      <HamburgerIcon h={8} w={8} />
-    </StickyNav>
+  <Box
+    h="100%"
+    overflowY="scroll"
+    sx={{
+      "&::-webkit-scrollbar": {
+        width: "4px",
+        height: "8px",
+      },
+      "&:: -webkit-scrollbar-track": {
+        width: "6px",
+        backgroundColor: "#171529",
+        borderRadius: "0px",
+      },
+      "&:: -webkit-scrollbar-thumb": {
+        backgroundColor: "blue.400",
+        borderRadius: "80px",
+      },
+    }}
+  >
+    <Wrapper h="100vh">
+      <LinkSection />
+      <Hero />
+    </Wrapper>
 
-    <SnapSection>
-      <Container h="100vh">
-        <Hero />
-      </Container>
-    </SnapSection>
-    <SnapSection>
-      <About />
-    </SnapSection>
-    <SnapSection></SnapSection>
-    <SnapSection></SnapSection>
+    <About />
+    <Tech />
+    <Projects />
+
+    <Contact />
   </Box>
 );
 

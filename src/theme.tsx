@@ -18,12 +18,16 @@ const theme = extendTheme({
   styles: {
     global: (props) => ({
       html: {
+        h: "100%",
         scrollBehavior: "smooth",
+        m: "0",
       },
       body: {
+        h: "100%",
+        m: "0",
         fontFamily: "body",
-        color: mode("black", "whiteAlpha.900")(props),
-        // bg: mode("white", "gray.800")(props),
+        color: mode("black", "white")(props),
+        bg: mode("white", "gray.800")(props),
         lineHeight: "base",
       },
     }),

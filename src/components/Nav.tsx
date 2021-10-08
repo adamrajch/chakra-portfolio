@@ -4,13 +4,16 @@ import React, { ReactElement } from "react";
 export default function StickyNav({ children }: any): ReactElement {
   return (
     <HStack
+      pt="0"
+      mt="0"
+      bg="transparent"
       spacing={4}
-      position="sticky"
+      pos="fixed"
       top="1rem"
       w="100%"
       justifyContent="flex-end"
       align="center"
-      pr={6}
+      pr={2}
     >
       {children}
     </HStack>

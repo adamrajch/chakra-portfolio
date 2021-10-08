@@ -1,42 +1,119 @@
 import {
   Box,
-  Button,
   Container,
   Flex,
   Heading,
+  HStack,
+  Icon,
   Image,
   Text,
+  VStack,
+  Wrap,
 } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
+import { GiBiceps } from "react-icons/gi";
+import { RiComputerLine, RiPlantLine } from "react-icons/ri";
 import { Wrapper } from "./Wrapper";
-
 export default function About(): ReactElement {
   return (
     <Wrapper>
-      <Flex align="center">
-        <Container display="flex" flexDir="column">
-          <Heading as="h4" size="lg">
-            Expert Web Developer & Designer
+      <Flex
+        align="center"
+        flexDir={["column-reverse", "row"]}
+        justifyContent="space-around"
+      >
+        <Container display="flex" flexDir="column" maxW="2xl">
+          <Heading mt={2}>README.md</Heading>
+          <Box w="20%" borderBottom="2px solid white" mb={2} />
+          <Heading as="h4" size="md" mb={3}>
+            Expert Web Developer
           </Heading>
-          <Heading>About Me</Heading>
-          <Box w="20%" borderBottom="2px solid white" />
+          <VStack
+            as="ul"
+            align="flex-start"
+            textAlign="left"
+            mb={5}
+            spacing={0}
+          >
+            <HStack>
+              <Icon h={7} w={7} as={RiPlantLine} />
+              <Text> Currently Learning: React Native</Text>
+            </HStack>
+            <HStack>
+              <Icon h={7} w={7} as={RiComputerLine} />
+              <Text> Favorite Stack: NextJS, Firebase, ChakraUI</Text>
+            </HStack>
+            <HStack>
+              <Icon h={7} w={7} as={GiBiceps} />
+              <Text> Competitive Armwrestler</Text>
+            </HStack>
+          </VStack>
           <Text>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vero
-            suscipit, est sed eligendi molestiae odio provident id mollitia
-            atque, illum culpa ipsum hic unde. Consequuntur odit blanditiis
-            dicta ea tenetur!
+            I have always been an avid learner and problem solver. I am
+            experienced with making full stack web applications in the vast
+            Javascript ecosystem. Making responsive and elegant UI with smooth
+            user experience is a priority for me as a developer. Versed with
+            various backend technologies I am confident to be able to adapt any
+            project depending on the vendor or stack.
           </Text>
-          <Box>
-            <Button>Download Resume</Button>
-          </Box>
         </Container>
         <Image
-          boxSize="sm"
+          h="auto"
+          w="auto"
+          maxH={["", "50vh"]}
           src="https://blogs.forbes.com/olliebarder/files/2018/12/dbs_broly_1.jpg"
           p={4}
-          border="1px solid grey"
+          borderRadius="md"
+          border="2px solid"
+          _hover={{
+            borderColor: "blue.400",
+          }}
         />
       </Flex>
+
+      <Wrap spacing={2} justify="center" my={8}>
+        <Image
+          src="/react_logo.png"
+          maxH={["50px", "100px"]}
+          h="auto"
+          w="auto"
+        />
+        <Image
+          src="/next_logo.png"
+          maxH={["50px", "100px"]}
+          h="auto"
+          w="auto"
+        />
+        <Image
+          src="/typescript_logo.png"
+          maxH={["50px", "100px"]}
+          h="auto"
+          w="auto"
+        />
+        <Image src="/js_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
+        <Image src="/fb_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
+        <Image src="/aws_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
+        <Image
+          src="/node_logo.png"
+          maxH={["50px", "100px"]}
+          h="auto"
+          w="auto"
+        />
+        <Image src="/gql_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
+        <Image
+          src="/html_logo.png"
+          maxH={["50px", "100px"]}
+          h="auto"
+          w="auto"
+        />
+        {/* <Image src="/chakra_logo.png" maxH={["50px","100px"]} h="auto" w="auto" /> */}
+        <Image
+          src="/tailwind_logo.png"
+          maxH={["50px", "100px"]}
+          h="auto"
+          w="auto"
+        />
+      </Wrap>
     </Wrapper>
   );
 }
