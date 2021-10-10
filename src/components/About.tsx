@@ -8,7 +8,6 @@ import {
   Image,
   Text,
   VStack,
-  Wrap,
 } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
 import { GiBiceps } from "react-icons/gi";
@@ -16,10 +15,10 @@ import { RiComputerLine, RiPlantLine } from "react-icons/ri";
 import { Wrapper } from "./Wrapper";
 export default function About(): ReactElement {
   return (
-    <Wrapper>
+    <Wrapper maxW={["", "container.md", "container.xl"]}>
       <Flex
         align="center"
-        flexDir={["column-reverse", "row"]}
+        flexDir={{ base: "column-reverse", xl: "row" }}
         justifyContent="space-around"
       >
         <Container display="flex" flexDir="column" maxW="2xl">
@@ -70,50 +69,6 @@ export default function About(): ReactElement {
           }}
         />
       </Flex>
-
-      <Wrap spacing={2} justify="center" my={8}>
-        <Image
-          src="/react_logo.png"
-          maxH={["50px", "100px"]}
-          h="auto"
-          w="auto"
-        />
-        <Image
-          src="/next_logo.png"
-          maxH={["50px", "100px"]}
-          h="auto"
-          w="auto"
-        />
-        <Image
-          src="/typescript_logo.png"
-          maxH={["50px", "100px"]}
-          h="auto"
-          w="auto"
-        />
-        <Image src="/js_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
-        <Image src="/fb_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
-        <Image src="/aws_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
-        <Image
-          src="/node_logo.png"
-          maxH={["50px", "100px"]}
-          h="auto"
-          w="auto"
-        />
-        <Image src="/gql_logo.png" maxH={["50px", "100px"]} h="auto" w="auto" />
-        <Image
-          src="/html_logo.png"
-          maxH={["50px", "100px"]}
-          h="auto"
-          w="auto"
-        />
-        {/* <Image src="/chakra_logo.png" maxH={["50px","100px"]} h="auto" w="auto" /> */}
-        <Image
-          src="/tailwind_logo.png"
-          maxH={["50px", "100px"]}
-          h="auto"
-          w="auto"
-        />
-      </Wrap>
     </Wrapper>
   );
 }

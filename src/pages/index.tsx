@@ -6,7 +6,6 @@ import { Hero } from "../components/Hero";
 import LinkSection from "../components/LinkSection";
 import Projects from "../components/Projects";
 import Tech from "../components/Tech";
-import { Wrapper } from "../components/Wrapper";
 const Index = () => (
   <Box
     h="100%"
@@ -27,10 +26,8 @@ const Index = () => (
       },
     }}
   >
-    <Wrapper h="100vh">
-      <LinkSection />
-      <Hero />
-    </Wrapper>
+    <LinkSection />
+    <Hero />
 
     <About />
     <Tech />

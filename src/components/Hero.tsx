@@ -5,11 +5,13 @@ import {
   Button,
   Flex,
   HStack,
+  Icon,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import React from "react";
+import { RiNewspaperLine } from "react-icons/ri";
 import Typewriter from "typewriter-effect";
 import { Container } from "./Container";
 import { DarkModeSwitch } from "./DarkModeSwitch";
@@ -22,7 +24,12 @@ export const Hero = ({ title }: { title: string }) => {
   const buttonColor = useColorModeValue("black", "white");
   const titleColor = useColorModeValue("blue.600", "white");
   return (
-    <Container h="100%" w="100vw">
+    <Container
+      h="100%"
+      p={0}
+      m="auto"
+      // maxW={["", "container.lg", "container.xl"]}
+    >
       <Nav>
         <DarkModeSwitch />
         <HamburgerIcon h={8} w={8} />
@@ -44,7 +51,7 @@ export const Hero = ({ title }: { title: string }) => {
           My name is
         </Text>
         <Text
-          fontSize={["6vw", "3rem"]}
+          fontSize={["1.5rem", "3rem"]}
           fontWeight="600"
           textTransform="uppercase"
           letterSpacing="4px"
@@ -54,10 +61,10 @@ export const Hero = ({ title }: { title: string }) => {
         <HStack
           alignItems="center"
           fontWeight="700"
-          spacing={[4, 6]}
+          spacing={[2, 6]}
           mb="10px"
           w="100%"
-          fontSize={["9.2vw", "6vw"]}
+          fontSize={["1.9rem", "6vw"]}
           // bgGradient="linear(to-l, #7928CA, #FF0080)"
           // bgClip="text"
           color={titleColor}
@@ -65,6 +72,7 @@ export const Hero = ({ title }: { title: string }) => {
           sx={{
             textShadow: "0 0 7px #3fc0fb",
           }}
+          py={3}
         >
           <Box>{`<`}</Box>
 
@@ -96,7 +104,7 @@ export const Hero = ({ title }: { title: string }) => {
         <Text
           maxW={["80%", "45%"]}
           mb="30px"
-          fontSize="1.1rem"
+          fontSize={["0.9rem", "1.1rem"]}
           fontWeight="500"
         >
           I'm a fullstack web developer based in Chicago, Illinois specializing
@@ -118,7 +126,7 @@ export const Hero = ({ title }: { title: string }) => {
             Typescript
           </Text>{" "}
         </Text>
-        <Box>
+        <Flex>
           <Button
             borderRadius="none"
             size="md"
@@ -141,8 +149,35 @@ export const Hero = ({ title }: { title: string }) => {
           >
             Get in touch
           </Button>
-        </Box>
-        <Box></Box>
+
+          <Button
+            display={["inline-block", "none"]}
+            borderRadius="none"
+            size="md"
+            border="1px solid white"
+            bgColor={buttonBgColor}
+            color={buttonColor}
+            // borderColor={buttonColor}
+            mx={4}
+          >
+            Resume <Icon as={RiNewspaperLine} h={5} w={5} ml={2} />
+          </Button>
+
+          <Button
+            display={["none", "inline-block"]}
+            borderRadius="none"
+            size="lg"
+            border="1px solid white"
+            bgColor={buttonBgColor}
+            color={buttonColor}
+            borderColor={buttonColor}
+            mx={4}
+            _hover={{ borderColor: "blue.300", color: "blue.400" }}
+          >
+            Resume <Icon as={RiNewspaperLine} h={5} w={5} ml={2} />
+          </Button>
+        </Flex>
+
         {/* <ChevronDownIcon color="white" w={7} h={7} /> */}
       </Flex>
     </Container>

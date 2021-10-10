@@ -14,7 +14,6 @@ export const Wrapper = (props: ContainerProps) => {
       justifyContent="center"
       color={color[colorMode]}
       minH="100vh"
-      py={6}
       {...props}
     />
   );

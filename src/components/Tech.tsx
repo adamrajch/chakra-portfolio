@@ -42,7 +42,7 @@ export default function Tech(): ReactElement {
     },
   ];
   return (
-    <Wrapper>
+    <Wrapper maxW={["", "container.md", "container.lg"]}>
       <Heading>Tech Stack</Heading>
       {data.map((tech, i) => (
         <Box
@@ -70,6 +70,7 @@ export default function Tech(): ReactElement {
                   filter="grayscale(50%)"
                   _hover={{
                     filter: "none",
+                    transform: "translateY(-0.5rem)",
                   }}
                 />
               </Tooltip>

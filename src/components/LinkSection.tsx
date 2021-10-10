@@ -16,7 +16,7 @@ export default function LinkSection(): ReactElement {
       position="fixed"
       bottom="0"
       left="1rem"
-      display={["none", "flex"]}
+      display={{ base: "none", xl: "flex" }}
       color={color}
     >
       <DarkModeSwitchIcon />
