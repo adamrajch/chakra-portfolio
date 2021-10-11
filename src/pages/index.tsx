@@ -1,4 +1,5 @@
 import { Box } from "@chakra-ui/react";
+import Head from "next/head";
 import React from "react";
 import About from "../components/About";
 import Contact from "../components/Contact";
@@ -10,6 +11,7 @@ const Index = () => (
   <Box
     h="100%"
     overflowY="scroll"
+    overflowX="hidden"
     sx={{
       "&::-webkit-scrollbar": {
         width: "4px",
@@ -26,6 +28,11 @@ const Index = () => (
       },
     }}
   >
+    <Head>
+      <title>Adam Rajchwald</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <link rel="shortcut icon" href="/homer.png" />
+    </Head>
     <LinkSection />
     <Hero />
 

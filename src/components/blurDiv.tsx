@@ -24,13 +24,13 @@ export default function BlurDiv({ project }: any): ReactElement {
           p={4}
           borderRadius="md"
           h="100%"
-          background="rgba(4, 32, 34, 0.8)"
+          background="rgba(2, 10, 37, 0.9)"
           color="white"
         >
           <Heading as="h4" size="sm">
             Featured Project
           </Heading>
-          <Heading as="a" href="#" _hover={{ color: "gold" }} py={2}>
+          <Heading as="a" href="#" _hover={{ color: "blue.200" }} py={2}>
             {project.title}
           </Heading>
           <Container borderRadius="md" color="white" py={2} px={0}>

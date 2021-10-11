@@ -30,7 +30,16 @@ export default function Contact(): ReactElement {
         <Text fontSize="xl" color="blue.400">
           arajchwald@gmail.com
         </Text>
-        <HStack align="center" justify="center" spacing={4} my={4}>
+        <HStack
+          align="center"
+          justify="center"
+          spacing={4}
+          my={4}
+          display={{
+            base: "inline-block",
+            xl: "none",
+          }}
+        >
           <Link href="gooogle.com">
             <Icon
               as={AiOutlineGithub}

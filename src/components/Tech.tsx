@@ -63,6 +63,7 @@ export default function Tech(): ReactElement {
             {tech.images?.map(({ url, name }) => (
               <Tooltip label={name}>
                 <Image
+                  key={name}
                   src={url}
                   maxH={["50px", "80px"]}
                   h="auto"

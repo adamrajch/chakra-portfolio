@@ -13,11 +13,9 @@ import {
   Text,
   useColorModeValue,
   VStack,
-  Wrap,
 } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
 import { AiOutlineGithub } from "react-icons/ai";
-import { BiCode } from "react-icons/bi";
 import BlurDiv from "./blurDiv";
 export default function Projects(): ReactElement {
   const color = useColorModeValue("black", "white");
@@ -28,7 +26,7 @@ export default function Projects(): ReactElement {
         "Fullstack application that uses Supabase backend to create recommendation lists for anime and movies. You can save different media to custom lists to share to your friends. You can search anime and movies via the Jigan API and the TMDB API. Data is saved to the user profile user the Supabase relational database and fetched with subscription hooks",
       tags: ["React", "Supabase", "ChakraUI", "NextJS"],
       github: "https://github.com/adamrajch/supa-lists",
-      link: "supa-lists.vercel.app",
+      link: "https://supa- lists.vercel.app",
       imageUrl: "/supalists.png",
     },
     {
@@ -63,7 +61,7 @@ export default function Projects(): ReactElement {
       title: "LinkedIn",
       summary:
         "A basic clone of LinkedIn. Uses firebase v8 with react hooks. Comes with full authentication and login features",
-      tags: ["React", "Firebase", "Firestore", "NextJS"],
+      tags: ["React", "Firebase", "Firestore"],
       github: "https://github.com/adamrajch/linkedIn-clone",
       link: "https://linked-in-9dab7.web.app/",
       imageUrl: "/linkedIn.png",
@@ -87,7 +85,7 @@ export default function Projects(): ReactElement {
       <VStack spacing={6} display={["none", "block"]}>
         {data.map((p, i) => {
           return (
-            <Grid templateColumns="repeat(10, 1fr)" key={p.title}>
+            <Grid templateColumns="repeat(10, 1fr)" key={p.title} role="group">
               <GridItem
                 alignSelf={i % 2 == 0 ? "flex-start" : "center"}
                 gridRow="1/2"
@@ -104,11 +102,11 @@ export default function Projects(): ReactElement {
                   <Heading as="h4" size="sm">
                     Featured Project
                   </Heading>
-                  <Heading as="a" href={p.link} _hover={{ color: "gold" }}>
+                  <Heading as="a" href={p.link} _hover={{ color: "blue.300" }}>
                     {p.title}
                   </Heading>
                   <Box
-                    bgColor="gray.600"
+                    bgColor="blue.800"
                     borderColor={color}
                     border="1px solid"
                     boxShadow="lg"
@@ -169,12 +167,15 @@ export default function Projects(): ReactElement {
                   w="auto"
                   maxH="100%"
                   src={p.imageUrl}
-                  //   p={2}
                   borderRadius="md"
                   border="2px solid"
                   _hover={{
                     borderColor: "blue.400",
                     transform: "scale(1.05)",
+                  }}
+                  filter="grayscale(70%)"
+                  _groupHover={{
+                    filter: "none",
                   }}
                 />
               </GridItem>
@@ -184,17 +185,18 @@ export default function Projects(): ReactElement {
       </VStack>
       <VStack display={["block", "none"]} spacing={3}>
         {data.map((p, i) => {
-          return <BlurDiv project={p} />;
+          return <BlurDiv project={p} key={p.title} />;
         })}
       </VStack>
 
-      <Heading textAlign="center" mt={28} mb={[8, 16]}>
+      {/* <Heading textAlign="center" mt={28} mb={[8, 16]}>
         Other Projects
       </Heading>
 
       <Grid templateColumns={["repeat(1, 1fr)", "repeat(3, 1fr)"]} gap={5}>
         {otherProjects.map((p) => (
           <Box
+            key={p.title}
             p={5}
             borderRadius="md"
             bgColor="gray.600"
@@ -240,7 +242,7 @@ export default function Projects(): ReactElement {
             </VStack>
           </Box>
         ))}
-      </Grid>
+      </Grid> */}
     </Container>
   );
 }

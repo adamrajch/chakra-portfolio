@@ -43,7 +43,7 @@ export const Hero = ({ title }: { title: string }) => {
         justify="center"
       >
         <Text
-          fontSize={["1.3rem", "1.1rem"]}
+          fontSize={["1.1rem", "1.3rem", "3rem"]}
           fontWeight="300"
           textTransform="uppercase"
           letterSpacing="4px"
@@ -51,7 +51,7 @@ export const Hero = ({ title }: { title: string }) => {
           My name is
         </Text>
         <Text
-          fontSize={["1.5rem", "3rem"]}
+          fontSize={["1.3rem", "1.5rem", "3rem"]}
           fontWeight="600"
           textTransform="uppercase"
           letterSpacing="4px"
@@ -64,7 +64,7 @@ export const Hero = ({ title }: { title: string }) => {
           spacing={[2, 6]}
           mb="10px"
           w="100%"
-          fontSize={["1.9rem", "6vw"]}
+          fontSize={["1.7rem", "6vw"]}
           // bgGradient="linear(to-l, #7928CA, #FF0080)"
           // bgClip="text"
           color={titleColor}
@@ -76,12 +76,7 @@ export const Hero = ({ title }: { title: string }) => {
         >
           <Box>{`<`}</Box>
 
-          <Text
-            _groupHover={{
-              letterSpacing: "10px",
-              transition: "0.2s linear",
-            }}
-          >
+          <Text letterSpacing="5px">
             <Typewriter
               options={{
                 autoStart: true,
