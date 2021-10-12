@@ -1,3 +1,4 @@
+import { useColorModeValue } from "@chakra-ui/color-mode";
 import { Image } from "@chakra-ui/image";
 import { HStack, Spacer, Text } from "@chakra-ui/layout";
 import React, { ReactElement, useEffect, useState } from "react";
@@ -6,28 +7,27 @@ import MobileDrawer from "./MobileDrawer";
 export default function StickyNav(): ReactElement {
   const [visible, setVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-
+  const [isTop, setIsTop] = useState(true);
+  const navColor = useColorModeValue("gray.100", "#13181af2");
   const handleScroll = () => {
-    const currentScrollPos = window.pageYOffset;
-
+    const currentScrollPos = window.scrollY;
+    if (window.scrollY > 100) {
+      setIsTop(false);
+    } else {
+      setIsTop(true);
+    }
     // set state based on location info (explained in more detail below)
-    setVisible(
-      (prevScrollPos > currentScrollPos &&
-        prevScrollPos - currentScrollPos > 40) ||
-        currentScrollPos < 10
-    );
 
     // set state to new scroll position
+    setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 40);
     setPrevScrollPos(currentScrollPos);
   };
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [visible, prevScrollPos]);
 
   useEffect(() => {
-    console.log(visible);
-  }, [visible]);
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [visible, prevScrollPos, handleScroll]);
 
   const links = [
     {
@@ -49,12 +49,12 @@ export default function StickyNav(): ReactElement {
   ];
   return (
     <HStack
-      pt="0"
+      py="0.5em"
       mt="0"
-      // bg="transparent"
       spacing={4}
+      bg={isTop ? "transparent" : navColor}
       pos="fixed"
-      top="1rem"
+      top="0"
       zIndex={100}
       w="100%"
       justifyContent="flex-end"
@@ -63,11 +63,19 @@ export default function StickyNav(): ReactElement {
       transition="0.5s"
       transitionTimingFunction="ease-in"
       display={visible ? "flex" : "none"}
+      boxShadow={isTop ? "none" : " 0px 0px 5px #000"}
     >
-      <Image src="/shrek.png" h={[10, 16]} w={[10, 16]} ml="1rem" />
+      <Link to="home" spy={true} smooth={true}>
+        <Image src="/shrek.png" h={[10, 16]} w={[10, 16]} ml="1rem" />
+      </Link>
       <Spacer />
       {/* <DarkModeSwitch /> */}
-      <HStack spacing={4} fontSize="1.1em">
+      <HStack
+        spacing={4}
+        fontSize="1.1em"
+        display={{ base: "none", xl: "flex" }}
+        pr="2rem"
+      >
         {links.map((link) => (
           <Text
             cursor="pointer"

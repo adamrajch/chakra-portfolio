@@ -20,16 +20,9 @@ export default function Contact(): ReactElement {
   const color = useColorModeValue("blue.600", "white");
   const hColor = useColorModeValue("blue.300", "blue.300");
   return (
-    <Flex
-      textAlign="center"
-      flexDir="column"
-      align="center"
-      h="40vh"
-      mt={36}
-      id="contact"
-    >
+    <Flex textAlign="center" flexDir="column" align="center" h="40vh" mt={36}>
       <Container>
-        <Heading>Get in touch ✉️</Heading>
+        <Heading id="contact">Get in touch ✉️</Heading>
         <Text my={4} fontSize={["0.8rem", "1rem"]}>
           Got a question or an idea? My inbox is always open{" "}
         </Text>
@@ -47,7 +40,7 @@ export default function Contact(): ReactElement {
             xl: "none",
           }}
         >
-          <Link href="gooogle.com">
+          <Link href="https://github.com/adamrajch" target="_blank">
             <Icon
               as={AiOutlineGithub}
               cursor="pointer"
@@ -56,7 +49,10 @@ export default function Contact(): ReactElement {
               _hover={{ transform: "translateY(-0.2em)", color: hColor }}
             />
           </Link>
-          <Link href="gooogle.com">
+          <Link
+            href="https://www.linkedin.com/in/adamrajchwald/"
+            target="_blank"
+          >
             <Icon
               as={AiOutlineLinkedin}
               cursor="pointer"
@@ -65,7 +61,10 @@ export default function Contact(): ReactElement {
               _hover={{ transform: "translateY(-0.2em)", color: hColor }}
             />
           </Link>
-          <Link href="gooogle.com">
+          <Link
+            href="https://www.linkedin.com/in/adamrajchwald/"
+            target="_blank"
+          >
             <Icon
               as={AiOutlineInstagram}
               cursor="pointer"

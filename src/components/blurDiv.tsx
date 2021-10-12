@@ -17,7 +17,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 export default function BlurDiv({ project }: any): ReactElement {
   return (
     <Box pos="relative">
-      <Box zIndex={5} pos="relative" borderRadius="md">
+      <Box zIndex={5} pos="relative" borderRadius="md" border="2px solid white">
         <VStack
           spacing={2}
           align="flex-start"
@@ -27,7 +27,7 @@ export default function BlurDiv({ project }: any): ReactElement {
           background="rgba(2, 10, 37, 0.9)"
           color="white"
         >
-          <Heading as="h4" size="sm">
+          <Heading as="h4" size="md">
             Featured Project
           </Heading>
           <Heading as="a" href="#" _hover={{ color: "blue.200" }} py={2}>

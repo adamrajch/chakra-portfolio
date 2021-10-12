@@ -20,7 +20,7 @@ export default function LinkSection(): ReactElement {
       color={color}
     >
       <DarkModeSwitchIcon />
-      <Link href="gooogle.com">
+      <Link href="https://github.com/adamrajch" target="_blank">
         <Icon
           as={AiOutlineGithub}
           cursor="pointer"
@@ -29,7 +29,7 @@ export default function LinkSection(): ReactElement {
           _hover={{ transform: "translateY(-0.2em)", color: hColor }}
         />
       </Link>
-      <Link href="gooogle.com">
+      <Link href="https://www.linkedin.com/in/adamrajchwald/" target="_blank">
         <Icon
           as={AiOutlineLinkedin}
           cursor="pointer"
@@ -38,7 +38,7 @@ export default function LinkSection(): ReactElement {
           _hover={{ transform: "translateY(-0.2em)", color: hColor }}
         />
       </Link>
-      <Link href="gooogle.com">
+      <Link href="gooogle.com" target="_blank">
         <Icon
           as={AiOutlineInstagram}
           cursor="pointer"

@@ -26,7 +26,7 @@ export default function Projects(): ReactElement {
         "Fullstack application that uses Supabase backend to create recommendation lists for anime and movies. You can save different media to custom lists to share to your friends. You can search anime and movies via the Jigan API and the TMDB API. Data is saved to the user profile user the Supabase relational database and fetched with subscription hooks",
       tags: ["React", "Supabase", "ChakraUI", "NextJS"],
       github: "https://github.com/adamrajch/supa-lists",
-      link: "https://supa- lists.vercel.app",
+      link: "https://supa-lists.vercel.app",
       imageUrl: "/supalists.png",
     },
     {
@@ -106,7 +106,12 @@ export default function Projects(): ReactElement {
                   <Heading as="h4" size="sm">
                     Featured Project
                   </Heading>
-                  <Heading as="a" href={p.link} _hover={{ color: "blue.300" }}>
+                  <Heading
+                    as="a"
+                    href={p.link}
+                    _hover={{ color: "blue.300" }}
+                    target="blank"
+                  >
                     {p.title}
                   </Heading>
                   <Box
@@ -136,7 +141,7 @@ export default function Projects(): ReactElement {
                     ))}
                   </HStack>
                   <HStack>
-                    <Link href={p.github}>
+                    <Link href={p.github} target="blank">
                       <Icon
                         as={AiOutlineGithub}
                         h={8}
@@ -147,7 +152,7 @@ export default function Projects(): ReactElement {
                         }}
                       />
                     </Link>
-                    <Link href={p.link}>
+                    <Link href={p.link} target="blank">
                       <ExternalLinkIcon
                         h={8}
                         w={8}

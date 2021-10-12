@@ -13,7 +13,7 @@ export const DarkModeSwitchIcon = () => {
         cursor="pointer"
         w={7}
         h={7}
-        _hover={{ transform: "translateY(-0.2em)", color: hColor }}
+        _hover={{ transform: "translateY(-0.1em)", color: hColor }}
       />
     );
   }
@@ -23,7 +23,7 @@ export const DarkModeSwitchIcon = () => {
       cursor="pointer"
       w={7}
       h={7}
-      _hover={{ transform: "translateY(-0.2em)", color: hColor }}
+      _hover={{ transform: "translateY(-0.1em)", color: hColor }}
     />
   );
 };

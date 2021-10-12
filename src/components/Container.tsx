@@ -16,6 +16,7 @@ export const Container = (props: FlexProps) => {
       bgImage={bgI[colorMode]}
       color={color[colorMode]}
       {...props}
+      bgSize="cover"
     />
   );
 };

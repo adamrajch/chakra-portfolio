@@ -15,14 +15,17 @@ import { RiComputerLine, RiPlantLine } from "react-icons/ri";
 import { Wrapper } from "./Wrapper";
 export default function About(): ReactElement {
   return (
-    <Wrapper maxW={["", "container.md", "container.xl"]} id="about">
+    <Wrapper maxW={["container.md", "container.md", "container.xl"]} id="about">
       <Flex
         align="center"
         flexDir={{ base: "column-reverse", xl: "row" }}
         justifyContent="space-around"
+        px={2}
       >
-        <Container display="flex" flexDir="column" maxW="2xl">
-          <Heading mt={2}>README.md</Heading>
+        <Container display="flex" flexDir="column" maxW={["md", "2xl"]}>
+          <Heading mt={2} size="2xl">
+            README.md
+          </Heading>
           <Box w="20%" borderBottom="2px solid white" mb={2} />
           <Heading as="h4" size="md" mb={3}>
             Expert Web Developer
@@ -59,7 +62,7 @@ export default function About(): ReactElement {
         <Image
           h="auto"
           w="auto"
-          maxH={["", "50vh"]}
+          maxH={["35vh", "50vh"]}
           src="https://blogs.forbes.com/olliebarder/files/2018/12/dbs_broly_1.jpg"
           p={4}
           borderRadius="md"

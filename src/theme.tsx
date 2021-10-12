@@ -30,12 +30,12 @@ const theme = extendTheme({
         bg: mode("white", "gray.800")(props),
         lineHeight: "base",
         "&::-webkit-scrollbar": {
-          width: "16px",
-          borderRadius: "8px",
-          backgroundColor: `rgba(0, 0, 0, 0.05)`,
+          width: "4px",
+          borderRadius: "6px",
+          backgroundColor: `rgba(8, 10, 49, 0.05)`,
         },
         "&::-webkit-scrollbar-thumb": {
-          backgroundColor: `rgba(238, 174, 174,1)`,
+          backgroundColor: `#3893fb`,
         },
       },
     }),
