@@ -67,18 +67,19 @@ export default function StickyNav(): ReactElement {
       <Image src="/shrek.png" h={[10, 16]} w={[10, 16]} ml="1rem" />
       <Spacer />
       {/* <DarkModeSwitch /> */}
-      <HStack spacing={2} fontSize="1.1em">
+      <HStack spacing={4} fontSize="1.1em">
         {links.map((link) => (
           <Text
             cursor="pointer"
             _hover={{
               color: "blue.300",
             }}
+            key={link.ref}
+            fontWeight="bold"
           >
-            {" "}
-            <Link to={link.ref} spy={true} smooth={true} key={link.ref}>
+            <Link to={link.ref} spy={true} smooth={true}>
               {link.title}
-            </Link>{" "}
+            </Link>
           </Text>
         ))}
       </HStack>

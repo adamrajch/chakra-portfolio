@@ -44,7 +44,7 @@ export default function Projects(): ReactElement {
         "Google search API functionality with serverside rendering. UI is created to match google styles with TailwindCSS. Data is fetched via NextJS serverside functionality functions",
       tags: ["React", "Tailwind", "SSR", "NextJS"],
       github: "https://github.com/adamrajch/gooble",
-      link: "gooble.vercel.app",
+      link: "https://gooble.vercel.app",
       imageUrl: "/google.png",
     },
     {
