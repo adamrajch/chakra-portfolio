@@ -33,7 +33,7 @@ export default function Projects(): ReactElement {
       title: "Crypto Dashboard",
       summary:
         "A dashboard for all your cryptos. Search. filter, and see trends in the crypto market and news. Redux Toolkit is used with RTK Query to fetch from the various crypto API. Light and Dark theme available ",
-      tags: ["React", "Redux Toolkit", "ChakraUI", "NextJS"],
+      tags: ["React", "Redux Toolkit", "ChakraUI"],
       github: "https://github.com/adamrajch/crypto-redux-chakra",
       link: "https://crypto-redux-chakra.vercel.app/",
       imageUrl: "/crypto.png",
@@ -78,7 +78,11 @@ export default function Projects(): ReactElement {
     },
   ];
   return (
-    <Container maxW={["", "container.md", "container.lg"]} py={8}>
+    <Container
+      maxW={["", "container.md", "container.lg"]}
+      py={8}
+      id="portfolio"
+    >
       <Heading mt={3} textAlign="center" my={4}>
         Portfolio
       </Heading>

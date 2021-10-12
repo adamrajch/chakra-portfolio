@@ -42,7 +42,7 @@ export default function Tech(): ReactElement {
     },
   ];
   return (
-    <Wrapper maxW={["", "container.md", "container.lg"]}>
+    <Wrapper maxW={["", "container.md", "container.lg"]} id="tech">
       <Heading>Tech Stack</Heading>
       {data.map((tech, i) => (
         <Box
@@ -61,7 +61,7 @@ export default function Tech(): ReactElement {
           </Text>
           <Wrap spacing={4} justify="center" my={8}>
             {tech.images?.map(({ url, name }) => (
-              <Tooltip label={name}>
+              <Tooltip label={name} key={name}>
                 <Image
                   key={name}
                   src={url}

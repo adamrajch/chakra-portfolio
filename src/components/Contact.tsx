@@ -20,7 +20,14 @@ export default function Contact(): ReactElement {
   const color = useColorModeValue("blue.600", "white");
   const hColor = useColorModeValue("blue.300", "blue.300");
   return (
-    <Flex textAlign="center" flexDir="column" align="center" h="40vh" mt={36}>
+    <Flex
+      textAlign="center"
+      flexDir="column"
+      align="center"
+      h="40vh"
+      mt={36}
+      id="contact"
+    >
       <Container>
         <Heading>Get in touch ✉️</Heading>
         <Text my={4} fontSize={["0.8rem", "1rem"]}>

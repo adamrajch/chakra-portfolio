@@ -19,16 +19,24 @@ const theme = extendTheme({
     global: (props) => ({
       html: {
         h: "100%",
-        scrollBehavior: "smooth",
+        // scrollBehavior: "smooth",
         m: "0",
       },
       body: {
-        h: "100%",
+        // h: "100%",
         m: "0",
         fontFamily: "body",
         color: mode("black", "white")(props),
         bg: mode("white", "gray.800")(props),
         lineHeight: "base",
+        "&::-webkit-scrollbar": {
+          width: "16px",
+          borderRadius: "8px",
+          backgroundColor: `rgba(0, 0, 0, 0.05)`,
+        },
+        "&::-webkit-scrollbar-thumb": {
+          backgroundColor: `rgba(238, 174, 174,1)`,
+        },
       },
     }),
   },

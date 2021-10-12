@@ -15,7 +15,7 @@ import { RiComputerLine, RiPlantLine } from "react-icons/ri";
 import { Wrapper } from "./Wrapper";
 export default function About(): ReactElement {
   return (
-    <Wrapper maxW={["", "container.md", "container.xl"]}>
+    <Wrapper maxW={["", "container.md", "container.xl"]} id="about">
       <Flex
         align="center"
         flexDir={{ base: "column-reverse", xl: "row" }}

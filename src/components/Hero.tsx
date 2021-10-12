@@ -1,4 +1,3 @@
-import { HamburgerIcon } from "@chakra-ui/icons";
 import { BoxProps } from "@chakra-ui/layout";
 import {
   Box,
@@ -14,7 +13,6 @@ import React from "react";
 import { RiNewspaperLine } from "react-icons/ri";
 import Typewriter from "typewriter-effect";
 import { Container } from "./Container";
-import { DarkModeSwitch } from "./DarkModeSwitch";
 import Nav from "./Nav";
 export const MotionBox = motion<BoxProps>(Box);
 export const Hero = ({ title }: { title: string }) => {
@@ -28,12 +26,10 @@ export const Hero = ({ title }: { title: string }) => {
       h="100%"
       p={0}
       m="auto"
+
       // maxW={["", "container.lg", "container.xl"]}
     >
-      <Nav>
-        <DarkModeSwitch />
-        <HamburgerIcon h={8} w={8} />
-      </Nav>
+      <Nav />
       <Flex
         h="100%"
         flexDir="column"
@@ -73,26 +69,27 @@ export const Hero = ({ title }: { title: string }) => {
             textShadow: "0 0 7px #3fc0fb",
           }}
           py={3}
+          letterSpacing="5px"
         >
           <Box>{`<`}</Box>
 
-          <Text letterSpacing="5px">
-            <Typewriter
-              options={{
-                autoStart: true,
-                loop: true,
-                strings: [
-                  "WebDeveloper",
-                  "FullStackDev",
-                  "FrontEnd",
-                  "BackEnd",
-                  "ReactJS",
-                ],
-                delay: 90,
-                deleteSpeed: 100,
-              }}
-            />
-          </Text>
+          {/* <Text letterSpacing="5px"> */}
+          <Typewriter
+            options={{
+              autoStart: true,
+              loop: true,
+              strings: [
+                "WebDeveloper",
+                "FullStackDev",
+                "FrontEnd",
+                "BackEnd",
+                "ReactJS",
+              ],
+              delay: 90,
+              deleteSpeed: 100,
+            }}
+          />
+          {/* </Text> */}
           <Box>{`/ >`}</Box>
         </HStack>
 
