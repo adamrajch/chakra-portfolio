@@ -1,5 +1,7 @@
 import { Center, ChakraProvider } from "@chakra-ui/react";
 import { css } from "@emotion/react";
+import "@fontsource/dosis/600.css";
+import "@fontsource/exo/400.css";
 import { AppProps } from "next/app";
 import { useEffect, useState } from "react";
 import RingLoader from "react-spinners/RingLoader";
@@ -16,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 1500);
   }, []);
 
   if (loading) {

@@ -1,5 +1,6 @@
-import { Box, Heading, Image, Text, Tooltip, Wrap } from "@chakra-ui/react";
+import { Heading } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
+import TechBox from "./TechBox";
 import { Wrapper } from "./Wrapper";
 export default function Tech(): ReactElement {
   const data = [
@@ -44,40 +45,8 @@ export default function Tech(): ReactElement {
   return (
     <Wrapper maxW={["", "container.md", "container.lg"]} id="tech">
       <Heading>Tech Stack</Heading>
-      {data.map((tech, i) => (
-        <Box
-          key={tech.title}
-          p={2}
-          borderRadius="md"
-          w="100%"
-          mr="auto"
-          my={3}
-          border="2px solid"
-          borderColor={i == 0 ? "blue.400" : i == 1 ? "red.400" : "goldenrod"}
-        >
-          <Heading textAlign="left">{tech.title}</Heading>
-          <Text my={2} color="gray.400">
-            {tech.summary}
-          </Text>
-          <Wrap spacing={4} justify="center" my={8}>
-            {tech.images?.map(({ url, name }) => (
-              <Tooltip label={name} key={name}>
-                <Image
-                  key={name}
-                  src={url}
-                  maxH={["50px", "80px"]}
-                  h="auto"
-                  w="auto"
-                  filter="grayscale(50%)"
-                  _hover={{
-                    filter: "none",
-                    transform: "translateY(-0.5rem)",
-                  }}
-                />
-              </Tooltip>
-            ))}
-          </Wrap>
-        </Box>
+      {data.map(({ summary, title, images }, i) => (
+        <TechBox summary={summary} title={title} images={images} i={i} />
       ))}
     </Wrapper>
   );

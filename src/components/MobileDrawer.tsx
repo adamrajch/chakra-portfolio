@@ -138,7 +138,7 @@ export default function MobileDrawer({}: Props): ReactElement {
                   </Box>
                   <Box
                     as="a"
-                    href="gooogle.com"
+                    href="https://www.instagram.com/tendon_mcgee/?hl=en"
                     target="_blank"
                     cursor="pointer"
                   >

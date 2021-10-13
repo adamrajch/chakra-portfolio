@@ -13,7 +13,10 @@ const theme = extendTheme({
   colors: {
     black: "#16161D",
   },
-  fonts,
+  fonts: {
+    heading: "Dosis",
+    body: "Exo",
+  },
   breakpoints,
   styles: {
     global: (props) => ({

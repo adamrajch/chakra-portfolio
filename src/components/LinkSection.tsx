@@ -38,7 +38,10 @@ export default function LinkSection(): ReactElement {
           _hover={{ transform: "translateY(-0.2em)", color: hColor }}
         />
       </Link>
-      <Link href="gooogle.com" target="_blank">
+      <Link
+        href="https://www.instagram.com/tendon_mcgee/?hl=en"
+        target="_blank"
+      >
         <Icon
           as={AiOutlineInstagram}
           cursor="pointer"

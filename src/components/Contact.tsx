@@ -62,7 +62,7 @@ export default function Contact(): ReactElement {
             />
           </Link>
           <Link
-            href="https://www.linkedin.com/in/adamrajchwald/"
+            href="https://www.instagram.com/tendon_mcgee/?hl=en"
             target="_blank"
           >
             <Icon

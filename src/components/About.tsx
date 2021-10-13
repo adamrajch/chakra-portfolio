@@ -50,26 +50,34 @@ export default function About(): ReactElement {
               <Text> Competitive Armwrestler</Text>
             </HStack>
           </VStack>
-          <Text>
-            I have always been an avid learner and problem solver. I am
-            experienced with making full stack web applications in the vast
-            Javascript ecosystem. Making responsive and elegant UI with smooth
-            user experience is a priority for me as a developer. Versed with
-            various backend technologies I am confident to be able to adapt any
-            project depending on the vendor or stack.
-          </Text>
+          <Container maxW="md" px={0}>
+            <Text>
+              Hey there! My name is Adam and I love doing anything related to
+              web development. I have been self taught since 2018 when I first
+              started learning basic HTML, CSS, and Javascript. Since then, I
+              have dove headfirst into the wide Javascript ecosystem and love
+              using React, Typescript, and varous UI libraries. <br /> <br />I
+              focus on building responsive and elegant UI for various websites.
+              I am well versed in various backends, lately I have been enjoying
+              the serverless / cloud backends such as Firebase and AWS.
+              <br />
+              <br />I am always looking into open source projects and creating
+              new ideas myself. My first blog post is coming soon!
+            </Text>
+          </Container>
         </Container>
         <Image
           h="auto"
           w="auto"
           maxH={["35vh", "50vh"]}
-          src="https://blogs.forbes.com/olliebarder/files/2018/12/dbs_broly_1.jpg"
+          src="/selfie.jpg"
           p={4}
           borderRadius="md"
           border="2px solid"
           _hover={{
             borderColor: "blue.400",
           }}
+          mb={{ base: 4, xl: 0 }}
         />
       </Flex>
     </Wrapper>
