@@ -1,17 +1,14 @@
 import { BoxProps } from "@chakra-ui/layout";
 import {
   Box,
-  Button,
   Flex,
   HStack,
-  Icon,
   ScaleFade,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useRef } from "react";
-import { RiNewspaperLine } from "react-icons/ri";
 import { useInViewport } from "react-in-viewport";
 import Typewriter from "typewriter-effect";
 import { Container } from "./Container";
@@ -133,7 +130,7 @@ export const Hero = ({ title }: { title: string }) => {
               Typescript
             </Text>{" "}
           </Text>
-          <Flex>
+          {/* <Flex>
             <Button
               borderRadius="none"
               size="md"
@@ -183,7 +180,7 @@ export const Hero = ({ title }: { title: string }) => {
             >
               Resume <Icon as={RiNewspaperLine} h={5} w={5} ml={2} />
             </Button>
-          </Flex>
+          </Flex> */}
         </ScaleFade>
       </Flex>
     </Container>

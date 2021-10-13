@@ -27,7 +27,7 @@ export default function About(): ReactElement {
             README.md
           </Heading>
           <Box w="20%" borderBottom="2px solid white" mb={2} />
-          <Heading as="h4" size="md" mb={3}>
+          <Heading as="h4" size="md" mb={4}>
             Expert Web Developer
           </Heading>
           <VStack
@@ -35,7 +35,7 @@ export default function About(): ReactElement {
             align="flex-start"
             textAlign="left"
             mb={5}
-            spacing={0}
+            spacing={1}
           >
             <HStack>
               <Icon h={7} w={7} as={RiPlantLine} />
