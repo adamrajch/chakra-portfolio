@@ -1,11 +1,13 @@
 import {
   Container,
+  Grid,
   Heading,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
 import React, { ReactElement } from "react";
 import BlurDiv from "./blurDiv";
+import OtherProjectSection from "./OtherProjectSection";
 import ProjectSection from "./ProjectSection";
 export default function Projects(): ReactElement {
   const color = useColorModeValue("black", "white");
@@ -60,11 +62,12 @@ export default function Projects(): ReactElement {
 
   const otherProjects = [
     {
-      title: "SupaLists",
-      summary: "description nani bog bungi",
-      tags: ["Supabase", "ChakraUI", "React", "NextJS"],
+      title: "TFT Stat Gen",
+      summary:
+        "A statistic generator for the popular auto chess game, Team Fight Tactics. The user can change the game state, influencing the chance of rolling the desired character. This game relies on statistics heavy and it is useful to know these numbers while playing in certain scenarios",
+      tags: ["React", "CSS", "Game Calculator"],
       github: "www.google.com",
-      link: "www.google.com",
+      link: "https://tft-calc.vercel.app/set4",
     },
   ];
   return (
@@ -87,60 +90,23 @@ export default function Projects(): ReactElement {
         })}
       </VStack>
 
-      {/* <Heading textAlign="center" mt={28} mb={[8, 16]}>
+      <Heading textAlign="center" mt={28} mb={[8, 16]}>
         Other Projects
       </Heading>
 
-      <Grid templateColumns={["repeat(1, 1fr)", "repeat(3, 1fr)"]} gap={5}>
+      <Grid
+        templateColumns={[
+          "repeat(1, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(2, 1fr)",
+          "repeat(3, 1fr)",
+        ]}
+        gap={3}
+      >
         {otherProjects.map((p) => (
-          <Box
-            key={p.title}
-            p={5}
-            borderRadius="md"
-            bgColor="gray.600"
-            border="3px solid transparent"
-            _hover={{
-              borderColor: "blue.500",
-            }}
-          >
-            <HStack justify="space-between" align="center" mb={2}>
-              <Icon as={BiCode} h={[8, 9]} w={[8, 9]} />
-              <Link href="#">
-                <ExternalLinkIcon
-                  h={[6, 9]}
-                  w={[6, 9]}
-                  _hover={{
-                    color: "blue.400",
-                    transform: "translateY(-.2rem)",
-                  }}
-                />
-              </Link>
-            </HStack>
-            <VStack align="flex-start">
-              <Heading textAlign="left" size="lg">
-                {p.title}
-              </Heading>
-
-              <Text>{p.summary}</Text>
-              <Wrap spacing={2}>
-                {p.tags.map((tag) => (
-                  <Tag
-                    bgColor="transparent"
-                    color="white"
-                    border="1px solid"
-                    borderColor="blue.500"
-                    variant="outline"
-                    size="md"
-                    key={tag}
-                  >
-                    {tag}
-                  </Tag>
-                ))}
-              </Wrap>
-            </VStack>
-          </Box>
+          <OtherProjectSection p={p} key={p.title} />
         ))}
-      </Grid> */}
+      </Grid>
     </Container>
   );
 }
