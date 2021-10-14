@@ -113,7 +113,7 @@ export const Hero = ({ title }: { title: string }) => {
             fontWeight="500"
             color={subColor}
           >
-            I'm a fullstack web developer based in Chicago, Illinois
+            I'm a full stack web developer based in Chicago, Illinois
             specializing in building responsive and performative websites.
           </Text>
           <Text

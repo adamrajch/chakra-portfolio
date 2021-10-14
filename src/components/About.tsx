@@ -29,7 +29,7 @@ export default function About(): ReactElement {
           </Heading>
           <Box w="20%" borderBottom="2px solid white" mb={2} />
           <Heading as="h4" size="md" mb={4}>
-            Fullstack Web Developer
+            Full Stack Web Developer
           </Heading>
           <VStack
             as="ul"
