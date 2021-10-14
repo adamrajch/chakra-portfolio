@@ -10,6 +10,7 @@ import {
   Link,
   ScaleFade,
   Text,
+  useBreakpointValue,
   useColorModeValue,
   VStack,
 } from "@chakra-ui/react";
@@ -21,9 +22,10 @@ import { useInViewport } from "react-in-viewport";
 export default function ProjectSection({ p, i }: any): ReactElement {
   const color = useColorModeValue("black", "white");
   const ref = useRef(null);
+  const variant = useBreakpointValue({ base: "-20px", md: "-200px" });
   const { enterCount } = useInViewport(
     ref,
-    { rootMargin: "-200px" },
+    { rootMargin: variant },
     { disconnectOnLeave: false },
     {}
   );

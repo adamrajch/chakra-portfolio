@@ -46,7 +46,13 @@ export default function Tech(): ReactElement {
     <Wrapper maxW={["", "container.md", "container.lg"]} id="tech">
       <Heading>Tech Stack</Heading>
       {data.map(({ summary, title, images }, i) => (
-        <TechBox summary={summary} title={title} images={images} i={i} />
+        <TechBox
+          summary={summary}
+          title={title}
+          images={images}
+          i={i}
+          key={title}
+        />
       ))}
     </Wrapper>
   );

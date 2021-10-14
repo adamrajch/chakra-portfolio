@@ -5,6 +5,7 @@ import {
   ScaleFade,
   Text,
   Tooltip,
+  useBreakpointValue,
   Wrap,
 } from "@chakra-ui/react";
 import React, { ReactElement, useRef } from "react";
@@ -19,9 +20,11 @@ export default function TechBox({
   i,
 }: any): ReactElement {
   const ref = useRef(null);
+  const variant = useBreakpointValue({ base: "-20px", md: "-200px" });
+
   const { enterCount } = useInViewport(
     ref,
-    { rootMargin: "-200px" },
+    { rootMargin: variant },
     { disconnectOnLeave: false },
     {}
   );

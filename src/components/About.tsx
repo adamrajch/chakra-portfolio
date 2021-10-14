@@ -21,6 +21,7 @@ export default function About(): ReactElement {
         flexDir={{ base: "column-reverse", xl: "row" }}
         justifyContent="space-around"
         px={2}
+        py={2}
       >
         <Container display="flex" flexDir="column" maxW={["md", "2xl"]}>
           <Heading mt={2} size="2xl">
@@ -28,7 +29,7 @@ export default function About(): ReactElement {
           </Heading>
           <Box w="20%" borderBottom="2px solid white" mb={2} />
           <Heading as="h4" size="md" mb={4}>
-            Expert Web Developer
+            Fullstack Web Developer
           </Heading>
           <VStack
             as="ul"
@@ -77,7 +78,7 @@ export default function About(): ReactElement {
           _hover={{
             borderColor: "blue.400",
           }}
-          mb={{ base: 4, xl: 0 }}
+          my={{ base: 4, xl: 0 }}
         />
       </Flex>
     </Wrapper>

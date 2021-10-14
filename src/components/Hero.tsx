@@ -5,6 +5,7 @@ import {
   HStack,
   ScaleFade,
   Text,
+  useBreakpointValue,
   useColorModeValue,
 } from "@chakra-ui/react";
 import { motion } from "framer-motion";
@@ -21,11 +22,11 @@ export const Hero = ({ title }: { title: string }) => {
   const buttonBgColor = useColorModeValue("white", "transparent");
   const buttonColor = useColorModeValue("black", "white");
   const titleColor = useColorModeValue("blue.600", "white");
-
+  const variant = useBreakpointValue({ base: "-20px", md: "-200px" });
   const ref = useRef(null);
   const { enterCount } = useInViewport(
     ref,
-    { rootMargin: "-200px" },
+    { rootMargin: variant },
     { disconnectOnLeave: false },
     {}
   );

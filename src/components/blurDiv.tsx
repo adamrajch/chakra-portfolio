@@ -9,6 +9,7 @@ import {
   ScaleFade,
   Tag,
   Text,
+  useBreakpointValue,
   VStack,
   Wrap,
 } from "@chakra-ui/react";
@@ -18,9 +19,10 @@ import { useInViewport } from "react-in-viewport";
 
 export default function BlurDiv({ project }: any): ReactElement {
   const ref = useRef(null);
+  const variant = useBreakpointValue({ base: "-20px", md: "-200px" });
   const { enterCount } = useInViewport(
     ref,
-    { rootMargin: "-200px" },
+    { rootMargin: variant },
     { disconnectOnLeave: false },
     {}
   );
