@@ -1,6 +1,5 @@
 import { useColorModeValue } from "@chakra-ui/color-mode";
-import { Image } from "@chakra-ui/image";
-import { HStack, Spacer, Text } from "@chakra-ui/layout";
+import { HStack, Spacer, Text } from "@chakra-ui/react";
 import React, { ReactElement, useEffect, useState } from "react";
 import { Link } from "react-scroll";
 import MobileDrawer from "./MobileDrawer";
@@ -66,7 +65,16 @@ export default function StickyNav(): ReactElement {
       boxShadow={isTop ? "none" : " 0px 0px 5px #000"}
     >
       <Link to="home" spy={true} smooth={true}>
-        <Image src="/shrek.png" h={[10, 16]} w={[10, 16]} ml="1rem" />
+        <Text
+          bgGradient="linear(to-l, #1574b4, #17e5ec)"
+          bgClip="text"
+          fontSize={["2xl", "4xl"]}
+          fontWeight="extrabold"
+          ml="1rem"
+          cursor="pointer"
+        >
+          AR.dev
+        </Text>
       </Link>
       <Spacer />
       {/* <DarkModeSwitch /> */}
