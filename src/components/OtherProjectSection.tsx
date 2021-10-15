@@ -32,7 +32,7 @@ export default function OtherProjectSection({ p }: any): ReactElement {
         >
           <HStack justify="space-between" align="center" mb={2}>
             <Icon as={BiCode} h={[8, 9]} w={[8, 9]} />
-            <Link href={p.link}>
+            <Link href={p.link} target="_blank">
               <ExternalLinkIcon
                 h={[6, 7]}
                 w={[6, 7]}
