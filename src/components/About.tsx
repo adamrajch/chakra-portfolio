@@ -55,9 +55,9 @@ export default function About(): ReactElement {
             <Text>
               Hey there! My name is Adam and I love doing anything related to
               web development. I have been self taught since 2018 when I first
-              started learning basic HTML, CSS, and Javascript. Since then, I
+              started learning basic HTML, CSS, and JavaScript. Since then, I
               have dove headfirst into the wide Javascript ecosystem and love
-              using React, Typescript, and varous UI libraries. <br /> <br />I
+              using React, TypeScript, and varous UI libraries. <br /> <br />I
               focus on building responsive and elegant UI for various websites.
               I am well versed in various backends, lately I have been enjoying
               the serverless / cloud backends such as Firebase and AWS.
