@@ -38,6 +38,10 @@ export default function StickyNav(): ReactElement {
       ref: "tech",
     },
     {
+      title: "periodize",
+      ref: "periodize",
+    },
+    {
       title: "portfolio",
       ref: "portfolio",
     },

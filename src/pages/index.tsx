@@ -5,6 +5,7 @@ import About from "../components/About";
 import Contact from "../components/Contact";
 import { Hero } from "../components/Hero";
 import LinkSection from "../components/LinkSection";
+import Periodize from "../components/Periodize";
 import Projects from "../components/Projects";
 import Tech from "../components/Tech";
 
@@ -52,6 +53,7 @@ const Index = () => {
 
       <About />
       <Tech />
+      <Periodize />
       <Projects />
 
       <Contact />
